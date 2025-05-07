@@ -8,5 +8,10 @@ namespace AiContigo.XaiClient.Models
 {
     public class ChatCompletionRequest
     {
+        //TEMP
+        public string Model { get; set; }
+
+        //TEMP
+        public string Prompt { get; set; }
     }
 }
