@@ -1,9 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AiContigo.XaiClient.Constants;
+using Microsoft.Extensions.Logging;
 
 namespace AiContigo.XaiClient
 {
@@ -40,7 +36,7 @@ namespace AiContigo.XaiClient
         public Builders.ListLanguageModelsRequestBuilder ListLanguageModels()
         {
             _logger.LogInformation("Initiating ListLanguageModels request");
-            return new Builders.ListLanguageModelsRequestBuilder(this, "/v1/language-models", _logger);
+            return new Builders.ListLanguageModelsRequestBuilder(this, XaiApiEndpoints.ListLanguageModels, _logger);
         }
 
         internal Http.IHttpClient GetHttpClient() => _httpClient;
