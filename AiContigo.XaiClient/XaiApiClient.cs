@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AiContigo.XaiClient
 {
-    public class XaiClient
+    public class XaiApiClient
     {
         private readonly string _apiKey;
         private readonly string _baseUrl;
@@ -15,7 +15,7 @@ namespace AiContigo.XaiClient
         private readonly Http.IHttpClient _httpClient;
         private readonly ILogger _logger;
 
-        public XaiClient(string apiKey, string baseUrl, string defaultModel, Http.IHttpClient httpClient, ILogger logger)
+        public XaiApiClient(string apiKey, string baseUrl, string defaultModel, Http.IHttpClient httpClient, ILogger logger)
         {
             _apiKey = apiKey ?? throw new ArgumentNullException(nameof(apiKey));
             _baseUrl = baseUrl ?? throw new ArgumentNullException(nameof(baseUrl));
@@ -40,7 +40,7 @@ namespace AiContigo.XaiClient
         public Builders.ListLanguageModelsRequestBuilder ListLanguageModels()
         {
             _logger.LogInformation("Initiating ListLanguageModels request");
-            return new Builders.ListLanguageModelsRequestBuilder(this, "list-language-models", _logger);
+            return new Builders.ListLanguageModelsRequestBuilder(this, "/v1/language-models", _logger);
         }
 
         internal Http.IHttpClient GetHttpClient() => _httpClient;

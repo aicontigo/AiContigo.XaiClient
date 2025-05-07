@@ -10,18 +10,18 @@ namespace AiContigo.XaiClient.Builders
 {
     public class XaiRequestBuilder
     {
-        private readonly XaiClient _client;
+        private readonly XaiApiClient _client;
         private readonly string _endpoint;
         private readonly string _model;
         private readonly string _prompt;
         private readonly ILogger _logger;
 
-        public XaiRequestBuilder(XaiClient client, string endpoint, ILogger logger)
+        public XaiRequestBuilder(XaiApiClient client, string endpoint, ILogger logger)
             : this(client, endpoint, client.DefaultModel, null, logger)
         {
         }
 
-        private XaiRequestBuilder(XaiClient client, string endpoint, string model, string prompt, ILogger logger)
+        private XaiRequestBuilder(XaiApiClient client, string endpoint, string model, string prompt, ILogger logger)
         {
             _client = client;
             _endpoint = endpoint;

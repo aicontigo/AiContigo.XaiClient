@@ -10,11 +10,11 @@ namespace AiContigo.XaiClient.Builders
 {
     public class ListLanguageModelsRequestBuilder
     {
-        private readonly XaiClient _client;
+        private readonly XaiApiClient _client;
         private readonly string _endpoint;
         private readonly ILogger _logger;
 
-        public ListLanguageModelsRequestBuilder(XaiClient client, string endpoint, ILogger logger)
+        public ListLanguageModelsRequestBuilder(XaiApiClient client, string endpoint, ILogger logger)
         {
             _client = client;
             _endpoint = endpoint;
