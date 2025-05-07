@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AiContigo.XaiClient\AiContigo.XaiClient.csproj" />
+  </ItemGroup>
+
 </Project>
